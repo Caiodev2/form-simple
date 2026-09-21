@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(244, 244, 245);
+    font-family: sans-serif;
+}
+
+
+header {
+    background-color: white;
+    color: rgb(63, 63, 255);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 1em;
+}
+
+header span{
+    background-color: rgb(190, 242, 255);
+    border-radius: 13px;
+    padding: 0.3em;
+}

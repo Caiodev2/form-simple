@@ -18,4 +18,31 @@ function handleFormSubmit() {
     nameInput.value = '';
     emailInput.value = '';
     nameInput.focus();
+
+    renderUsers();
+}
+
+function renderUsers(){
+
+    const listContent = document.getElementById("listContent");
+    if(userRegister.length === 0){
+        listContent.innerHTML  = "Nenhum cadastro realizado";
+        return;
+    }
+
+    listContent.innerHTML = '';
+
+    userRegister.forEach(user => {
+        const userElement = document.createElement('div');
+
+        userElement.innerHTML = `
+        
+            <strong>${user.name}</strong>
+            <span>${user.email}</span>
+            <small>${user.data}</small>
+        `;
+
+        listContent.appendChild(userElement)
+    });
+
 }

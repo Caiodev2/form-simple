@@ -48,8 +48,8 @@ main {
 }
 
 .div-title-nav img {
-    width: 22px;
-    height: 22px;
+  /*   width: 22px;
+    height: 22px; */
 }
 
 .div-title-nav h2 {
@@ -123,4 +123,47 @@ form button:hover {
 form button:active {
     transform: scale(0.98);
 }
+
+.list-users{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.title-list{
+    padding-bottom: 0.7em;
+    display: flex;
+    gap: 16px;
+}
+
+.list-users button{
+
+    height: 2.7em;
+    padding-inline:1em ;
+
+    border: solid gray 1px;
+    border-radius: 8px;
+
+    font-size: 0.8em;
+
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.1s;
+}
+
+.list-users button:hover{
+   background-color: rgb(216, 216, 216);
+   border: solid 1px rgb(143, 6, 6);
+   color: red;
+   font-weight: 500;
+}
+
+.list-users button:active {
+    transform: scale(0.99);
+    background-color: red;
+    color: black;
+}
+
+
+
 

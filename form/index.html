@@ -23,24 +23,24 @@
         <div id="messageBox"></div>
 
         <nav>
-            <div>
+            <div class="div-title-nav">
+                <img src="/form/assets/img/adicionar-usuario.png" alt="icon-new-user" >
                 <h2>Novo Cadastro</h2>
-                <img src="" alt="icon-new-user">
             </div>
             
             <form>
-                <div>
+                <div class="form-div">
                     <label for="name">Nome Completo</label>
                     <input type="text" id="name" placeholder="Ex: Caio Silva">
                 </div>
-
-                <div>
+ 
+                <div class="form-div">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Ex: caio@email.com">
                 </div>
 
-                <button>
-                    <img src="" alt="icon-add">
+                <button onclick="handleFormSubmit()">
+                    <img src="/form/assets/img/mais.png" alt="icon-add" style="height: 10px;">
                     Cadastrar Pessoa
                 </button>
             </form>
@@ -49,8 +49,8 @@
         <div>
             <div>
                 <h3>Lista de Cadastrados</h3>
-                <img src="" alt="icon-list">
-                <button>
+                <img src="/form/assets/img/pesssoas.png" alt="icon-list" height="20px">
+                <button class="clear-button">
                     Limpar lista
                 </button>
             </div>

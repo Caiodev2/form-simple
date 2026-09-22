@@ -5,12 +5,9 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
     background-color: rgb(244, 244, 245);
     font-family: sans-serif;
 }
-
 
 header {
     background-color: white;
@@ -26,7 +23,79 @@ header div{
 }
 
 header span{
-    background-color: rgb(190, 242, 255);
+    background-color: rgb(190, 207, 255);
     border-radius: 13px;
     padding: 0.3em;
 }
+
+
+main {
+    width: min(400px, 90%);
+    margin: 50px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.div-title-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    margin-bottom: 1em;
+}
+
+.div-title-nav img {
+    width: 22px;
+    height: 22px;
+}
+
+.div-title-nav h2 {
+    font-size: 1.5em;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form-div label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-div input {
+    height: 3em;
+    padding: 1em;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #fff;
+
+    font-size: 14px;
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.4s;
+}
+
+.form-div input::placeholder {
+    color: #9ca3af;
+}
+
+.form-div input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+

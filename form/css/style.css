@@ -99,3 +99,28 @@ form {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
+form button {
+    height: 3em;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 0.8em;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}
+
+form button:active {
+    transform: scale(0.98);
+}
+

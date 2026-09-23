@@ -206,6 +206,30 @@ form button:active {
     border-radius: 20px;
 }
 
+#messageBox {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.message_success {
+    background-color: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.message_error {
+    background-color: #fff1f2;
+    color: #be123c;
+    border: 1px solid #fecdd3;
+}
+
+.hidden {
+    display: none;
+}
+
 
 @media screen and (max-width: 728px) {
     #div-header{

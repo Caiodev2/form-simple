@@ -6,7 +6,7 @@ function handleFormSubmit() {
     const emailInput = document.getElementById('email')
 
     if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
-        return;
+        return showMessage("O campo está vazio",'error');
     }
 
 
@@ -20,11 +20,14 @@ function handleFormSubmit() {
 
     userRegister.push(newRegister);
 
+    showMessage('Usuário cadastrado!')
+
     nameInput.value = '';
     emailInput.value = '';
     nameInput.focus();
 
     renderUsers();
+    
 }
 
 function renderUsers(){
@@ -68,4 +71,16 @@ function removeRegister(){
     }
     userRegister = [];
     renderUsers();
+}
+
+function showMessage(text, tipo = 'success'){
+    const box = document.getElementById('messageBox');
+    box.textContent = text;
+    if (tipo === 'success') {
+        box.className = 'message_success'
+    } else{
+        box.className = 'message_error'
+    }
+
+    box.classList.remove('hidden');
 }

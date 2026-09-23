@@ -57,3 +57,11 @@ function renderUsers(){
     });
 
 }
+
+function removeRegister(){
+    if (userRegister.length === 0) {
+        return
+    }
+    userRegister = [];
+    renderUsers();
+}

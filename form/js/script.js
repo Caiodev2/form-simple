@@ -14,7 +14,7 @@ function handleFormSubmit() {
         id: Date.now(),
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
-        data: new Date().toLocaleDateString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+       data: new Date().toLocaleString('pt-BR')
     };
 
 
@@ -46,11 +46,13 @@ function renderUsers(){
         userElement.innerHTML = `
             <div>
                 <div class="user-perfil">
-                    <div>
-                        <strong>${user.name[0].toUpperCase()}</strong>
+                    <div class="photo-perfil">
+                        <strong>${user.name}</strong>
                     </div>
-                    
-                    <strong>${user.name}</strong>
+
+                    <div class="button-delete" onclick="deleteUser(${user.id})">
+                        <img src="/form/assets/img/deletar.png" alt="icon-delete" style="height: 20px;">
+                    </div>
                 </div>
                 
                 <div>
@@ -67,7 +69,7 @@ function renderUsers(){
 
 function removeRegister(){
     if (userRegister.length === 0) {
-        return
+        return showMessage('Não há usuários ', "error")
     }
     userRegister = [];
     renderUsers();
@@ -83,4 +85,14 @@ function showMessage(text, tipo = 'success'){
     }
 
     box.classList.remove('hidden');
+
+    setTimeout(() => {
+        box.classList.add('hidden');
+    }, 4000);
+}
+
+function deleteUser(id) {
+    userRegister = userRegister.filter(user => user.id !== id);
+
+    renderUsers();
 }

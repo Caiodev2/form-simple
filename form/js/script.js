@@ -5,6 +5,10 @@ function handleFormSubmit() {
     const nameInput = document.getElementById('name')
     const emailInput = document.getElementById('email')
 
+    if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+        return;
+    }
+
 
     const newRegister = {
         id: Date.now(),

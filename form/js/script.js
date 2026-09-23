@@ -5,6 +5,7 @@ function handleFormSubmit() {
     const nameInput = document.getElementById('name')
     const emailInput = document.getElementById('email')
 
+
     const newRegister = {
         id: Date.now(),
         name: nameInput.value.trim(),
@@ -36,10 +37,20 @@ function renderUsers(){
         const userElement = document.createElement('div');
 
         userElement.innerHTML = `
-        
-            <strong>${user.name}</strong>
-            <span>${user.email}</span>
-            <small>${user.data}</small>
+            <div>
+                <div class="user-perfil">
+                    <div>
+                        <strong>${user.name[0].toUpperCase()}</strong>
+                    </div>
+                    
+                    <strong>${user.name}</strong>
+                </div>
+                
+                <div>
+                    <span>${user.email}</span>
+                    <small>${user.data}</small>
+                </div>
+            </div>
         `;
 
         listContent.appendChild(userElement)

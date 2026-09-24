@@ -39,7 +39,6 @@ function handleFormSubmit() {
         emailInput.value = '';
         nameInput.focus();
 
-        renderUsers();
     })
     .catch(error => {
 

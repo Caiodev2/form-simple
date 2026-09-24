@@ -2,34 +2,53 @@ let userRegister = [];
 
 function handleFormSubmit() {
     
-    const nameInput = document.getElementById('name')
-    const emailInput = document.getElementById('email')
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
 
     if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
-        return showMessage("O campo está vazio",'error');
+        return showMessage("O campo está vazio", 'error');
     }
 
-
     const newRegister = {
-        id: Date.now(),
         name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-       data: new Date().toLocaleString('pt-BR')
+        email: emailInput.value.trim()
     };
 
+    fetch('http://localhost:8080/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newRegister)
+    })
+    .then(response => {
 
-    userRegister.push(newRegister);
+        if (!response.ok) {
+            throw new Error('Erro ao cadastrar usuário');
+        }
 
-    showMessage('Usuário cadastrado!')
+        return response.json();
+    })
+    .then(user => {
 
-    nameInput.value = '';
-    emailInput.value = '';
-    nameInput.focus();
+        console.log('Usuário cadastrado no backend:', user);
 
-    renderUsers();
-    
+        showMessage('Usuário cadastrado!');
+
+        nameInput.value = '';
+        emailInput.value = '';
+        nameInput.focus();
+
+    })
+    .catch(error => {
+
+        console.error('Erro de conexão com o backend:', error);
+
+        showMessage('Não foi possível conectar ao sever', 'error');
+    });
 }
 
+/*
 function renderUsers(){
 
     const listContent = document.getElementById("listContent");
@@ -51,7 +70,7 @@ function renderUsers(){
                     </div>
 
                     <div class="button-delete" onclick="deleteUser(${user.id})">
-                        <img src="/form/assets/img/deletar.png" alt="icon-delete" style="height: 20px;">
+                        <img src="/form/frontend/src/assets/img/deletar.png" alt="icon-delete" style="height: 20px;">
                     </div>
                 </div>
                 
@@ -66,6 +85,8 @@ function renderUsers(){
     });
 
 }
+
+*/ 
 
 function removeRegister(){
     if (userRegister.length === 0) {

@@ -39,6 +39,8 @@ function handleFormSubmit() {
         emailInput.value = '';
         nameInput.focus();
 
+        loadUsers();
+
     })
     .catch(error => {
 
@@ -50,41 +52,41 @@ function handleFormSubmit() {
 
 async function loadUsers() {
     const response = await fetch('http://localhost:8080/users')
+    
 
     const users = await response.json();
-
+    console.log(users)
     renderUsers(users);
 }
 
 function renderUsers(users){
 
     const listContent = document.getElementById("listContent");
-    if(userRegister.length === 0){
+
+    if(users.length === 0){
         listContent.innerHTML  = "Nenhum cadastro realizado";
         return;
     }
 
     listContent.innerHTML = '';
 
-    userRegister.forEach(user => {
+    users.forEach(user => {
+
         const userElement = document.createElement('div');
+        const firstLetter = user.name.charAt(0).toUpperCase();
 
         userElement.innerHTML = `
             <div>
                 <div class="user-perfil">
-                    <div class="photo-perfil">
-                        <strong>${user.name}</strong>
-                    </div>
 
-                    <div class="button-delete" onclick="deleteUser(${user.id})">
-                        <img src="/form/frontend/src/assets/img/deletar.png" alt="icon-delete" style="height: 20px;">
+                    <div class="photo-perfil">
+                        <strong>${firstLetter}</strong>
                     </div>
-                </div>
                 
-                <div>
-                    <span>${user.email}</span>
-                    <small>${user.data}</small>
-                </div>
+                    <div>
+                        <span>${user.email}</span>
+                        <small>${user.data}</small>
+                    </div>
             </div>
         `;
 

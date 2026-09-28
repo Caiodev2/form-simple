@@ -191,18 +191,28 @@ form button:active {
     margin: 5px;
 }
 
-.user-perfil{
+.user-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.user-info {
     display: flex;
     align-items: center;
     gap: 7px;
-    margin: 5px;
-    justify-content: space-between;
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
 }
 
 .photo-perfil{
     background-color: #1d4ed8;
     color: white;
-    padding: 5px;
+    padding: 7px;
     padding-inline: 10px;
     border-radius: 20px;
 }

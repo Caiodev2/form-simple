@@ -1,3 +1,4 @@
+loadUsers();
 
 
 function handleFormSubmit() {
@@ -76,18 +77,25 @@ function renderUsers(users){
         const firstLetter = user.name.charAt(0).toUpperCase();
 
         userElement.innerHTML = `
-            <div>
-                <div class="user-perfil">
+            <div class="user-perfil">
 
+                <div class="user-info">
                     <div class="photo-perfil">
                         <strong>${firstLetter}</strong>
                     </div>
-                
-                    <div>
+
+                    <div class="user-data">
+                        <strong>${user.name}</strong>
                         <span>${user.email}</span>
                         <small>${user.data}</small>
                     </div>
-            </div>
+                </div>
+
+                <div class="button-delete">
+                    🗑️
+                </div>
+
+        </div>
         `;
 
         listContent.appendChild(userElement)

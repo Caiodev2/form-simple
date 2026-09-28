@@ -48,8 +48,15 @@ function handleFormSubmit() {
     });
 }
 
-/*
-function renderUsers(){
+async function loadUsers() {
+    const response = await fetch('http://localhost:8080/users')
+
+    const users = await response.json();
+
+    renderUsers(users);
+}
+
+function renderUsers(users){
 
     const listContent = document.getElementById("listContent");
     if(userRegister.length === 0){
@@ -85,8 +92,6 @@ function renderUsers(){
     });
 
 }
-
-*/ 
 
 function removeRegister(){
     if (userRegister.length === 0) {

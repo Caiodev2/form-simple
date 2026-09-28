@@ -87,7 +87,7 @@ function renderUsers(users){
                     <div class="user-data">
                         <strong>${user.name}</strong>
                         <span>${user.email}</span>
-                        <small>${user.data}</small>
+                        <!--<small>${user.data}</small>-->
                     </div>
                 </div>
 
@@ -101,14 +101,6 @@ function renderUsers(users){
         listContent.appendChild(userElement)
     });
 
-}
-
-function removeRegister(){
-    if (userRegister.length === 0) {
-        return showMessage('Não há usuários ', "error")
-    }
-    userRegister = [];
-    renderUsers();
 }
 
 function showMessage(text, tipo = 'success'){
@@ -127,8 +119,22 @@ function showMessage(text, tipo = 'success'){
     }, 4000);
 }
 
+/*
+function removeRegister(){
+    if (userRegister.length === 0) {
+        return showMessage('Não há usuários ', "error")
+    }
+    userRegister = [];
+    renderUsers();
+}
+
+
+
+
+
 function deleteUser(id) {
     userRegister = userRegister.filter(user => user.id !== id);
 
     renderUsers();
 }
+    */

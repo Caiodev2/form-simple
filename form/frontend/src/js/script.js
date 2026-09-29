@@ -58,6 +58,9 @@ async function loadUsers() {
     const users = await response.json();
     console.log(users)
     renderUsers(users);
+
+    document.getElementById('registered-count').textContent =
+        `${users.length} cadastrados`;
 }
 
 function renderUsers(users){

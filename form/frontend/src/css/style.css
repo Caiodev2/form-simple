@@ -189,10 +189,6 @@ form button:active {
     
 }
 
-#listContent span{
-    padding: 3em;
-}
-
 #listContent > div{
     display: flex;
     flex-direction: column;

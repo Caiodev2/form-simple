@@ -135,6 +135,10 @@ form button:active {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .title-list{
@@ -183,6 +187,10 @@ form button:active {
     color: #9ca3af; 
     font-size: 14px; 
     
+}
+
+#listContent span{
+    padding: 3em;
 }
 
 #listContent > div{

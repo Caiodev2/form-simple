@@ -90,7 +90,7 @@ function renderUsers(users){
                     <div class="user-data">
                         <strong>${user.name}</strong>
                         <span>${user.email}</span>
-                        <!--<small>${user.data}</small>-->
+                        <small>${formatDate(user.registrationDate)}</small>
                     </div>
                 </div>
 
@@ -120,6 +120,11 @@ function showMessage(text, tipo = 'success'){
     setTimeout(() => {
         box.classList.add('hidden');
     }, 4000);
+}
+
+function formatDate(date){
+    const dateObj = new Date(date)
+    return dateObj.toLocaleDateString('pt-br')
 }
 
 /*

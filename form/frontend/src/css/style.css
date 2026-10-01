@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 
 html, body {
     background-color: rgb(244, 244, 245);
-    font-family: sans-serif;
+    font-family:'DM Sans', system-ui, 'Segoe UI', sans-serif;
 }
 
 header {
@@ -107,20 +109,28 @@ form {
 }
 
 form button {
-    height: 3em;
-
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+ 
+    height: 3.2em;
+    margin-top: 0.3em;
+ 
     border: none;
-    border-radius: 8px;
-
-    background: #2563eb;
+    border-radius: 12px;
+ 
+    background-color: #2563eb;
     color: white;
-
-    font-size: 0.8em;
+ 
+    font-size: 0.95rem;
     font-weight: 600;
-
+ 
     cursor: pointer;
-
-    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 8px 20px -8px rgba(91, 61, 245, 0.6);
+ 
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
 }
 
 form button:hover {
@@ -131,6 +141,11 @@ form button:active {
     transform: scale(0.98);
 }
 
+form button img {
+    height: 12px !important;
+    filter: brightness(0) invert(1);
+}
+
 .list-users{
     display: flex;
     flex-direction: column;
@@ -138,7 +153,7 @@ form button:active {
     background-color: white;
     padding: 1.5em;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(23, 21, 59, 0.04), 0 12px 32px -12px rgba(23, 21, 59, 0.12);
 }
 
 .title-list{
@@ -181,6 +196,9 @@ form button:active {
     min-height: 100px; 
     display: flex; 
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     
     border: 1px dashed #d1d5db; 
     border-radius: 10px; 
@@ -193,6 +211,15 @@ form button:active {
     display: flex;
     flex-direction: column;
     margin: 5px;
+}
+
+#listContent:has(.user-perfil) {
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: left;
+ 
+    border: none;
+    border-radius: 0;
 }
 
 .user-perfil {
@@ -265,7 +292,7 @@ form button:active {
 
 @media screen and (max-width: 728px) {
     #div-header{
-        gap: 25px;
+        gap: 20px;
     }
 }
 

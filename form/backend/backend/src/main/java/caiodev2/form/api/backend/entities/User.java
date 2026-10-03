@@ -2,6 +2,8 @@ package caiodev2.form.api.backend.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -11,6 +13,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private LocalDateTime registrationDate;
 
     public Long getId() {
         return id;
@@ -34,5 +37,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }

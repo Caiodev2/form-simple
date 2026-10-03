@@ -94,7 +94,7 @@ function renderUsers(users){
                     </div>
                 </div>
 
-                <div class="button-delete">
+                <div class="button-delete" onclick="deleteUser(${user.id})">
                     🗑️
                 </div>
 
@@ -138,11 +138,15 @@ function removeRegister(){
 
 
 
+*/
 
+async function deleteUser(id) {
+    const response = await fetch(`http://localhost:8080/${id}`, {
+        method: 'DELETE'
+    });
 
-function deleteUser(id) {
-    userRegister = userRegister.filter(user => user.id !== id);
-
-    renderUsers();
+    if (response.ok) {
+        loadUsers();
+    }
+    
 }
-    */
